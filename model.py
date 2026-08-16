@@ -57,8 +57,10 @@ def prepare_design_matrix(X, mean, std):
     X_scaled=add_bias_column(X_scaled)
     return X_scaled
 
-# Step 7 - predict_linear (not yet solved)
-# TODO: implement
+# Step 7 - predict_linear
+def predict_linear(X, weights):
+    y_hat=X@weights
+    return y_hat
 
 # Step 8 - mse_loss (not yet solved)
 # TODO: implement
