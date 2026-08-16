@@ -62,8 +62,12 @@ def predict_linear(X, weights):
     y_hat=X@weights
     return y_hat
 
-# Step 8 - mse_loss (not yet solved)
-# TODO: implement
+# Step 8 - mse_loss
+def mse_loss(y_true, y_pred):
+    residual=y_true-y_pred 
+    mean_squared_residual=residual**2/y_true.shape
+    mse=np.sum(mean_squared_residual)
+    return mse
 
 # Step 9 - mse_gradient (not yet solved)
 # TODO: implement
