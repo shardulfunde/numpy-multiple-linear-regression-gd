@@ -51,8 +51,11 @@ def add_bias_column(X):
     X=np.append(new_col,X,axis=1)
     return X
 
-# Step 6 - prepare_design_matrix (not yet solved)
-# TODO: implement
+# Step 6 - prepare_design_matrix
+def prepare_design_matrix(X, mean, std):
+    X_scaled=(X-mean)/std
+    X_scaled=add_bias_column(X_scaled)
+    return X_scaled
 
 # Step 7 - predict_linear (not yet solved)
 # TODO: implement
