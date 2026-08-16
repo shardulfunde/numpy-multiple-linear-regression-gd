@@ -44,8 +44,12 @@ def standardize_features(X, mean, std):
     X_scaled=(X-mean)/std
     return X_scaled
 
-# Step 5 - add_bias_column (not yet solved)
-# TODO: implement
+# Step 5 - add_bias_column
+def add_bias_column(X):
+    n,d=X.shape
+    new_col=np.ones((n,1))
+    X=np.append(new_col,X,axis=1)
+    return X
 
 # Step 6 - prepare_design_matrix (not yet solved)
 # TODO: implement
