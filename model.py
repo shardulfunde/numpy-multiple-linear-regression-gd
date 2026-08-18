@@ -85,8 +85,11 @@ def initialize_weights(n_features, seed=None):
         np.random.seed(seed)
     return np.random.normal(0,0.01,n_features)
 
-# Step 12 - gd_step (not yet solved)
-# TODO: implement
+# Step 12 - gd_step
+def gd_step(X, y, weights, lr):
+    y_hat=predict_linear(X,weights)
+    weights=weights-(lr*mse_gradient(X,y,y_hat))
+    return weights
 
 # Step 13 - epoch_train_val_losses (not yet solved)
 # TODO: implement
