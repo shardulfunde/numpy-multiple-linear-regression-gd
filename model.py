@@ -106,8 +106,18 @@ def update_early_stop_state(val_loss, best_val_loss, wait, weights, best_weights
     else:
         return (best_val_loss,wait+1,best_weights,(wait+1)>=patience)
 
-# Step 15 - init_training_state (not yet solved)
-# TODO: implement
+# Step 15 - init_training_state
+def init_training_state(n_features, seed=None):
+    weights=initialize_weights(n_features,seed)
+    return {
+        "weights":weights.copy(),
+        "best_weights":weights.copy(),
+        "best_val_loss":np.inf,
+        "wait":0,
+        "train_losses":[],
+        "val_losses":[],
+        "stopped":False
+    }
 
 # Step 16 - run_one_epoch (not yet solved)
 # TODO: implement
