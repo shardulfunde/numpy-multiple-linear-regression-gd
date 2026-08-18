@@ -99,8 +99,12 @@ def epoch_train_val_losses(X_train, y_train, X_val, y_val, weights):
     val_loss=mse_loss(y_val,y_val_pred)
     return (train_loss,val_loss)
 
-# Step 14 - update_early_stop_state (not yet solved)
-# TODO: implement
+# Step 14 - update_early_stop_state
+def update_early_stop_state(val_loss, best_val_loss, wait, weights, best_weights, patience):
+    if(val_loss<best_val_loss):
+        return (val_loss,0,weights.copy(),False)
+    else:
+        return (best_val_loss,wait+1,best_weights,(wait+1)>=patience)
 
 # Step 15 - init_training_state (not yet solved)
 # TODO: implement
