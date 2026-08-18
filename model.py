@@ -149,8 +149,15 @@ def mean_absolute_error(y_true, y_pred):
 def root_mean_squared_error(y_true, y_pred):
     return np.sqrt(mse_loss(y_true,y_pred))
 
-# Step 20 - r_squared (not yet solved)
-# TODO: implement
+# Step 20 - r_squared
+def r_squared(y_true, y_pred):
+    mean=np.mean(y_true)
+    residual_squared=np.sum((y_true-y_pred)**2)
+    sum_squared=np.sum((y_true-mean)**2)
+    if(sum_squared==0):
+        return np.nan
+    else:
+        return 1-(residual_squared/sum_squared)
 
 # Step 21 - evaluate_regression (not yet solved)
 # TODO: implement
