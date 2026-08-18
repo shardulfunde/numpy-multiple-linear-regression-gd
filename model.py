@@ -167,8 +167,16 @@ def evaluate_regression(y_true, y_pred):
         "r2":r_squared(y_true,y_pred)
     }
 
-# Step 22 - learning_curve_data (not yet solved)
-# TODO: implement
+# Step 22 - learning_curve_data
+def learning_curve_data(train_losses, val_losses):
+    n = len(train_losses)
+    epochs = list(range(1, n + 1))
+
+    return (
+        epochs,
+        [float(x) for x in train_losses],
+        [float(x) for x in val_losses]
+    )
 
 # Step 23 - weights_l2_distance (not yet solved)
 # TODO: implement
